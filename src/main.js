@@ -1,8 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createVuetify } from 'vuetify'
-import 'vuetify/styles'
+import router from './router'
+import axios from 'axios'
 
-const vuetify = createVuetify()
-
-createApp(App).use(vuetify).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.config.globalProperties.$axios = axios // axios 글로벌 사용 가능
+app.mount('#app')
