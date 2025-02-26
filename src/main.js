@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
+import { createPinia } from 'pinia'
 
 const app = createApp(App)
-app.use(router)
-app.config.globalProperties.$axios = axios // axios 글로벌 사용 가능
+app.use(createPinia()) // Pinia 등록
 app.mount('#app')
